@@ -46,5 +46,6 @@ if(isIos){ // ios系统
 	dlBtn.href = "itms-services://?action=download-manifest&url=https://qiangyee.github.io/mask/download/mask.plist";
 }else{     // 安卓系统
 	dlBtn.href = "https://qiangyee.github.io/mask/download/Mask.apk";
+	dlBtn.setAttribute('download', '');
 }
 </script>
