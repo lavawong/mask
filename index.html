@@ -228,7 +228,7 @@ var platform = navigator.platform.toLowerCase();
 var isIos = (/(ipad|iphone|ipod|itouch)/).test(ua) && (/(ipad|iphone|ipod|itouch)/).test(platform);
 var dlBtn = document.getElementById('dlBtn');
 if(isIos){ // ios系统
-	dlBtn.href = "itms-services://?action=download-manifest&url=https://qiangyee.github.io/mask/download/mask.plist";
+	dlBtn.href = "itms-services://?action=download-manifest&url=https://qiangyee.github.io/mask/download/mask.plist?v1";
 }else{     // 安卓系统
 	dlBtn.href = "https://qiangyee.github.io/mask/download/Mask.apk";
 	dlBtn.setAttribute('download', '');
