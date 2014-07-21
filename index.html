@@ -227,10 +227,107 @@ var ua = navigator.userAgent.toLowerCase();
 var platform = navigator.platform.toLowerCase();
 var isIos = (/(ipad|iphone|ipod|itouch)/).test(ua) && (/(ipad|iphone|ipod|itouch)/).test(platform);
 var dlBtn = document.getElementById('dlBtn');
+/**
+ * url解析
+ * @namespace URLParser
+ */
+
+URLParser = function(url, encode) {
+    var parser = document.createElement('a');
+    parser.href = url; //"http://example.com:3000/pathname/?search=test#hash";
+    var search = parser.search;
+    var paramstr = search.replace('?', '');
+    var paramArr = paramstr.split('&'),
+        matches, params = {};
+
+    for (var i = paramArr.length - 1; i >= 0; i--) {
+        matches = paramArr[i].match(/([^=]+)(=(.*)){0,1}/);
+        if (matches && matches[1]) {
+            params[matches[1]] = encode ? decodeURIComponent(matches[3]) : matches[3];
+        }
+    }
+    var pathname = parser.pathname;
+    if ('/' !== pathname.charAt(0)) {
+        pathname = '/' + pathname;
+    }
+    return {
+        hostname: parser.hostname || location.hostname,
+        // => "example.com"
+        protocol: parser.protocol || 'http:',
+        // => "http:"
+        port: parseInt(parser.port || 80),
+        // => "3000"
+        pathname: pathname,
+        // => "/pathname/"
+        search: search,
+        // => "?search=test"
+        hash: parser.hash,
+        // => "#hash"
+        host: parser.host || location.host,
+        // => "example.com:3000"
+        params: params,
+        /**
+         * 设置或获取参数值
+		 * @memberof Util.urlParser
+         * @param {String} name 参数名称
+         * @param {String} val 参数值
+         * @return {String} 返回参数值
+         */
+        param: function(name, val) {
+            if ('undefined' === typeof val) {
+                return params[name];
+            } else {
+                params[name] = val
+                this.search = search = '?' + this.serialize();
+                return val;
+            }
+        },
+        /**
+         * 获取url链接地址
+		 * @memberof Util.urlParser
+         * @return {String} url 返回url
+         */
+        toString: function() {
+            var self = this;
+            var url = self.protocol + '//' + self.hostname + (80 !== self.port ? (':' + self.port) : '') + self.pathname + self.search + self.hash;
+            return url;
+        },
+
+        /**
+         * 序列化一个对象为值对的形式<br>
+         * 注意，只支持一级深度，多维的对象请绕过，重新实现
+		 * @memberof Util.urlParser
+         * @return {String} 序列化之后的标准的值对形式的String
+         */
+        serialize: function() {
+            var ar = [];
+            for (var i in params) {
+                if (!params.hasOwnProperty(i)) {
+                    continue;
+                }
+                if (params[i] == null || params[i] == "") {
+                    ar.push(i + "=");
+                } else {
+                    ar.push(i + "=" + params[i]);
+                }
+            }
+            var str = ar.join("&");
+
+            return encode ? encodeURIComponent(str) : str;
+        }
+    }
+
+}
+
+var urlParser = new URLParser(location.href, true);
+var params = urlParser.params;
+
+var qudao = ('chuandan' in params) ? 'chuandan': 'yilabao';
+
 if(isIos){ // ios系统
-	dlBtn.href = "itms-services://?action=download-manifest&url=https://qiangyee.github.io/mask/download/mask.plist?v1";
+	dlBtn.href = 'itms-services://?action=download-manifest&url=https://qiangyee.github.io/mask/download/mask-'+qudao+'.plist?v1';
 }else{     // 安卓系统
-	dlBtn.href = "https://qiangyee.github.io/mask/download/Mask.apk";
+	dlBtn.href = 'https://qiangyee.github.io/mask/download/Mask-'+qudao+'.apk';
 	dlBtn.setAttribute('download', '');
 	dlBtn.setAttribute('target', '_blank');
 	if(/micromessenger/.test(ua)){
