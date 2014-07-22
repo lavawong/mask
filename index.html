@@ -224,7 +224,7 @@ li{ list-style:none;}
 </body>
 <script>
 var ua = navigator.userAgent.toLowerCase();
-alert(ua);
+//alert(ua);
 var platform = navigator.platform.toLowerCase();
 var isIos = (/(ipad|iphone|ipod|itouch)/i).test(ua) && (/(ipad|iphone|ipod|itouch)/i).test(platform);
 var dlBtn = document.getElementById('dlBtn');
@@ -339,6 +339,14 @@ if(isIos){ // ios系统
 		}, 500);
          
     }
+}
+if(/weibo/i.test(ua)){
+    var img = document.getElementById('webchart-tips-img');
+    img.src = './style/images/wechat_popup.jpg'
+    setTimeout(function(){
+        document.getElementById("popweixin").style.display = "block";
+    }, 500);
+     
 }
 </script>
 </html>
