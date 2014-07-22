@@ -225,7 +225,7 @@ li{ list-style:none;}
 <script>
 var ua = navigator.userAgent.toLowerCase();
 var platform = navigator.platform.toLowerCase();
-var isIos = (/(ipad|iphone|ipod|itouch)/).test(ua) && (/(ipad|iphone|ipod|itouch)/).test(platform);
+var isIos = (/(ipad|iphone|ipod|itouch)/i).test(ua) && (/(ipad|iphone|ipod|itouch)/i).test(platform);
 var dlBtn = document.getElementById('dlBtn');
 /**
  * url解析
