@@ -322,12 +322,12 @@ URLParser = function(url, encode) {
 var urlParser = new URLParser(location.href, true);
 var params = urlParser.params;
 
-var qudao = ('chuandan' in params) ? 'chuandan': 'yilabao';
+var qudao = ('chuandan' in params) ? '-chuandan': ('yilabao' in params? '-yilabao' : '');
 
 if(isIos){ // ios系统
-	dlBtn.href = 'itms-services://?action=download-manifest&url=https://qiangyee.github.io/mask/download/mask-'+qudao+'.plist?v1';
+	dlBtn.href = 'itms-services://?action=download-manifest&url=https://qiangyee.github.io/mask/download/mask'+qudao+'.plist?v2';
 }else{     // 安卓系统
-	dlBtn.href = 'https://qiangyee.github.io/mask/download/Mask-'+qudao+'.apk';
+	dlBtn.href = 'https://qiangyee.github.io/mask/download/Mask'+qudao+'.apk?v2';
 	dlBtn.setAttribute('download', '');
 	dlBtn.setAttribute('target', '_blank');
 	if(/micromessenger/.test(ua)){
