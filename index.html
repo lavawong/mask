@@ -325,6 +325,26 @@ var params = urlParser.params;
 
 var qudao = ('chuandan' in params) ? '-chuandan': ('yilabao' in params? '-yilabao' : '');
 
+// 布码
+function sudaReq(code){
+	var head = document.getElementsByTagName('head')[0];
+	var node = document.createElement('script');
+	node.charset = 'utf-8';
+	node.src = 'http://hits.sinajs.cn/A2/b.html?type=' + code;
+	head.appendChild(node);
+}
+
+if('chuandan' in params){
+	dlBtn.onclick = function(){
+		sudaReq('21_01_07');
+	}
+}else if('yilabao' in params){
+	dlBtn.onclick = function(){
+		sudaReq('21_01_06');
+	}
+}
+
+
 if(isIos){ // ios系统
 	dlBtn.href = 'itms-services://?action=download-manifest&url=https://qiangyee.github.io/mask/download/mask'+qudao+'.plist?v2';
 }else{     // 安卓系统
