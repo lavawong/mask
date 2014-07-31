@@ -646,13 +646,7 @@ var urlParser = new URLParser(location.href, true);
 
 var params = urlParser.params;
 
-var qudao = ('chuandan' in params) ? '_10002': ('yilabao' in params? '_10001' : '_10003');
 
-var a10004 = urlParser.param('a10004');
-
-if (a10004) {
-	qudao = '_10004';
-}
 
 // 布码
 function sudaReq(code){
@@ -673,11 +667,19 @@ if('chuandan' in params){
 	//}
 }
 
-if (!qudao) {
-    qudao = urlParser.params('qudao');
+var qudao = '';
+
+var a10004 = urlParser.param('a10004');
+
+if (a10004) {
+    qudao = '_10004';
 }
-
-
+if (!qudao) {
+    qudao = '_'+urlParser.params('qudao');
+}
+if (!qudao) {
+qudao = ('chuandan' in params) ? '_10002': ('yilabao' in params? '_10001' : '_10003');
+}
 if(isIos){ // ios系统
 
 	dlBtn.href = 'itms-services://?action=download-manifest&url=https://qiangyee.github.io/mask/download/mask'+qudao+'.plist?v3';
