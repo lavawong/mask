@@ -673,13 +673,18 @@ if('chuandan' in params){
 	//}
 }
 
+if (!qudao) {
+    qudao = urlParser.params('qudao');
+}
+
+
 if(isIos){ // ios系统
 
-	dlBtn.href = 'itms-services://?action=download-manifest&url=https://qiangyee.github.io/mask/download/mask'+qudao+'.plist?v2';
+	dlBtn.href = 'itms-services://?action=download-manifest&url=https://qiangyee.github.io/mask/download/mask'+qudao+'.plist?v3';
 
 }else{     // 安卓系统
 
-	dlBtn.href = 'https://qiangyee.github.io/mask/download/SinaMask_v1.0.2'+qudao+'.apk?v2';
+	dlBtn.href = 'https://qiangyee.github.io/mask/download/SinaMask_v1.0.3'+qudao+'.apk?v3';
 
 	dlBtn.setAttribute('download', '');
 
