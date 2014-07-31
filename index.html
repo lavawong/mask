@@ -675,10 +675,10 @@ if (a10004) {
     qudao = '_10004';
 }
 if (!qudao) {
-    qudao = '_'+urlParser.params('qudao');
+    qudao = '_' + urlParser.param('qudao');
 }
 if (!qudao) {
-qudao = ('chuandan' in params) ? '_10002': ('yilabao' in params? '_10001' : '_10003');
+    qudao = ('chuandan' in params) ? '_10002': ('yilabao' in params? '_10001' : '_10003');
 }
 if(isIos){ // ios系统
 
