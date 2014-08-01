@@ -680,8 +680,10 @@ if (!qudao) {
 if (!qudao) {
     qudao = ('chuandan' in params) ? '_10002': ('yilabao' in params? '_10001' : '_10003');
 }
-if (qudao === '10004') {
+if (qudao === '_10004') {
 	sudaReq('21_01_08')
+} else if (qudao === '_10005') {
+	sudaReq('21_01_09')
 }
 if(isIos){ // ios系统
 
