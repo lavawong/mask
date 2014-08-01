@@ -652,9 +652,11 @@ var params = urlParser.params;
 function sudaReq(code){
 	var head = document.getElementsByTagName('head')[0];
 	var node = document.createElement('script');
+	try{
 	node.charset = 'utf-8';
 	node.src = 'http://hits.sinajs.cn/A2/b.html?type=' + code;
 	head.appendChild(node);
+	}catch(e){}
 }
 
 if('chuandan' in params){
