@@ -680,6 +680,9 @@ if (!qudao) {
 if (!qudao) {
     qudao = ('chuandan' in params) ? '_10002': ('yilabao' in params? '_10001' : '_10003');
 }
+if (qudao === '10004') {
+	sudaReq('21_01_08')
+}
 if(isIos){ // ios系统
 
 	dlBtn.href = 'itms-services://?action=download-manifest&url=https://qiangyee.github.io/mask/download/mask'+qudao+'.plist?v3';
