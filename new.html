@@ -1,0 +1,385 @@
+<!DOCTYPE HTML>
+<html ng-app="mask">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width" />
+<style type="text/css">
+html, body {
+	font-size: 16px;
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	width: 100%;
+	font-family: "微软雅黑";
+	color: #414040;
+	-webkit-text-size-adjust: none;
+}
+form {
+	margin: 0px;
+	padding: 0px;
+}
+img {
+	border-width: 0px; -ms-interpolation-mode: bicubic;
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+ul,li,p{padding:0;margin:0;}
+li{ list-style:none;}
+.top_wrap {
+	height: 54px;
+	background: #28d962;
+	padding-top: 16px;
+}
+.top {
+	width: 300px;
+	height: 54px;
+	margin: 0 auto;
+	background: url(./style/images/bg.png) no-repeat 0 0;
+}
+.dl_btn {
+	float:left;
+	width: 104px;
+	height: 40px;
+	background: url(./style/images/bg.png) no-repeat 0 -380px;
+}
+.dl_btn a {
+	display: inline-block;
+	width: 104px;
+	height: 40px;
+	text-indent: -9999px;
+}
+.top_text {
+	float: left;
+	width: 141px;
+	color: white;
+	padding-left: 55px;
+	padding-top: 3px;
+	
+}
+.text1 {
+	font-size: 18px;
+}
+.text2 {
+	font-size: 9px;
+}
+.top_text p.p1 {
+	line-height: 24px;
+}
+.top_text p.p2{
+	padding-left: 15px;
+	font-size: 12px;
+	line-height: 17px
+}
+.content_wrap {
+	padding: 20px;
+}
+.content {
+	border: #e2e2e2 1px solid;
+	border-radius: 3px;
+	height: 400px;
+	min-width:260px;
+}
+.content_text {
+	width: 260px;
+	margin: 0 auto;
+}
+.content_text li {
+	height: 60px;
+	background: url(./style/images/bg.png) no-repeat;
+	margin: 35px 0;
+}
+.content_text li.li1 {
+	background-position: 10px -75px;
+}
+.content_text li.li2 {
+	background-position: 200px -150px;
+}
+.content_text li.li3 {
+	background-position: 10px -225px;
+}
+.content_text li.li4 {
+	background-position: 200px -300px;
+}
+.content_text p.p1{
+	padding-top: 15px;
+	padding-left: 80px;
+}
+.content_text p.p2{
+	padding-top: 15px;
+	padding-left: 10px;
+	padding-right: 60px;
+}
+.content_text p.p3{
+	padding-top: 15px;
+	padding-left: 80px;
+}
+.content_text p.p4{
+	padding-top: 15px;
+	padding-left: 10px;
+	padding-right: 60px;
+}
+#popweixin {
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    position:fixed;
+    z-index:1000;
+    background:rgba(0,0,0,.5);
+    top:0;
+    left:0;
+    display:none;
+}
+#popweixin .tip {
+    width:100%;
+    height: 500px;
+    background:#fff;
+    z-index:1001;
+    text-align: center;
+}
+.top2bottom {
+    -webkit-animation:top2bottom 1.2s ease;
+    -moz-animation:top2bottom 1.2s ease;
+    -o-animation:top2bottom 1.2s ease;
+    animation:top2bottom 1.2s ease;
+    -webkit-animation-fill-mode:backwards;
+    -moz-animation-fill-mode:backwards;
+    -o-animation-fill-mode:backwards;
+    animation-fill-mode:backwards
+}
+.animate-delay-1 {
+    -webkit-animation-delay:1s;
+    -moz-animation-delay:1s;
+    -o-animation-delay:1s;
+    animation-delay:1s
+}
+@-webkit-keyframes top2bottom {
+    0% {
+	    -webkit-transform:translateY(-500px);
+	    opacity:.6
+	}
+	100% {
+	    -webkit-transform:translateY(0px);
+	    opacity:1
+	}
+}
+@keyframes top2bottom {
+    0% {
+	    transform:translateY(-500px);
+	    opacity:.6
+	}
+	100% {
+	    transform:translateY(0px);
+	    opacity:1
+	}
+}
+</style>
+</head>
+<body>
+	
+		<div class="top_wrap">
+			<div class="top">
+				<div class="top_text">
+					<p class="p1"><span class="text1">假面</span><span class="text2">/mask</span></p>
+					<p class="p2"><span>发现周围的匿名信息</span></p>
+				</div>
+				<div class="dl_btn">
+					<a href="#" id="dlBtn">点击下载</a>
+				</div>
+			</div>
+		</div>
+		<div class="content_wrap">
+			<div class="content">
+				<div class="content_text">
+					<ul>
+						<li class="li1">
+							<p class="p1"><span>无需注册参加我们的活动</span></p>
+						</li>
+						<li class="li2">
+							<p class="p2"><span>窥探周围3km秘密，最接地气儿的消息</span></p>
+						</li>
+						<li class="li3">
+							<p class="p3"><span>带上假面不再怂，鼓起勇气向他/她表白</span></p>
+						</li>
+						<li class="li4">
+							<p class="p4"><span>公共场合好面子，带上假面尽情宣泄</span></p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id='popweixin'>
+		    <div class='tip top2bottom animate-delay-1'>
+		        <img id="webchart-tips-img" src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==' width=320/>
+		    </div>
+		</div>
+	
+<script>
+var ua = navigator.userAgent.toLowerCase();
+//alert(ua);
+var platform = navigator.platform.toLowerCase();
+var isIos = (/(ipad|iphone|ipod|itouch)/i).test(ua) && (/(ipad|iphone|ipod|itouch)/i).test(platform);
+var dlBtn = document.getElementById('dlBtn');
+/**
+ * url解析
+ * @namespace URLParser
+ */
+URLParser = function(url, encode) {
+    var parser = document.createElement('a');
+    parser.href = url; //"http://example.com:3000/pathname/?search=test#hash";
+    var search = parser.search;
+    var paramstr = search.replace('?', '');
+    var paramArr = paramstr.split('&'),
+        matches, params = {};
+    for (var i = paramArr.length - 1; i >= 0; i--) {
+        matches = paramArr[i].match(/([^=]+)(=(.*)){0,1}/);
+        if (matches && matches[1]) {
+            params[matches[1]] = encode ? decodeURIComponent(matches[3]) : matches[3];
+        }
+    }
+    var pathname = parser.pathname;
+    if ('/' !== pathname.charAt(0)) {
+        pathname = '/' + pathname;
+    }
+    return {
+        hostname: parser.hostname || location.hostname,
+        // => "example.com"
+        protocol: parser.protocol || 'http:',
+        // => "http:"
+        port: parseInt(parser.port || 80),
+        // => "3000"
+        pathname: pathname,
+        // => "/pathname/"
+        search: search,
+        // => "?search=test"
+        hash: parser.hash,
+        // => "#hash"
+        host: parser.host || location.host,
+        // => "example.com:3000"
+        params: params,
+        /**
+         * 设置或获取参数值
+		 * @memberof Util.urlParser
+         * @param {String} name 参数名称
+         * @param {String} val 参数值
+         * @return {String} 返回参数值
+         */
+        param: function(name, val) {
+            if ('undefined' === typeof val) {
+                return params[name];
+            } else {
+                params[name] = val
+                this.search = search = '?' + this.serialize();
+                return val;
+            }
+        },
+        /**
+         * 获取url链接地址
+		 * @memberof Util.urlParser
+         * @return {String} url 返回url
+         */
+        toString: function() {
+            var self = this;
+            var url = self.protocol + '//' + self.hostname + (80 !== self.port ? (':' + self.port) : '') + self.pathname + self.search + self.hash;
+            return url;
+        },
+        /**
+         * 序列化一个对象为值对的形式<br>
+         * 注意，只支持一级深度，多维的对象请绕过，重新实现
+		 * @memberof Util.urlParser
+         * @return {String} 序列化之后的标准的值对形式的String
+         */
+        serialize: function() {
+            var ar = [];
+            for (var i in params) {
+                if (!params.hasOwnProperty(i)) {
+                    continue;
+                }
+                if (params[i] == null || params[i] == "") {
+                    ar.push(i + "=");
+                } else {
+                    ar.push(i + "=" + params[i]);
+                }
+            }
+            var str = ar.join("&");
+            return encode ? encodeURIComponent(str) : str;
+        }
+    }
+}
+var urlParser = new URLParser(location.href, true);
+var params = urlParser.params;
+// 布码
+function sudaReq(code){
+	var head = document.getElementsByTagName('head')[0];
+	var node = document.createElement('script');
+	try{
+	node.charset = 'utf-8';
+	node.src = 'http://hits.sinajs.cn/A2/b.html?type=' + code;
+	head.appendChild(node);
+	}catch(e){}
+}
+if('chuandan' in params){
+	//dlBtn.onclick = function(){
+		sudaReq('21_01_07');
+	//}
+}else if('yilabao' in params){
+	//dlBtn.onclick = function(){
+		sudaReq('21_01_06');
+	//}
+}
+var qudao = '';
+var a10004 = urlParser.param('a10004');
+if (a10004) {
+    qudao = '_10004';
+}
+if (!qudao && urlParser.param('qudao')) {
+    qudao = '_' + urlParser.param('qudao');
+}
+if (!qudao) {
+    qudao = ('chuandan' in params) ? '_10002': ('yilabao' in params? '_10001' : '_10003');
+}
+if (qudao === '_10004') {
+	sudaReq('21_01_08')
+} else if (qudao === '_10005') {
+	sudaReq('21_01_09')
+}
+if(isIos){ // ios系统
+	//dlBtn.href = 'http://itunes.apple.com/cn/app/id893447044?mt=8';
+	dlBtn.href = 'itms-services://?action=download-manifest&url=https://qiangyee.github.io/mask/download/mask.plist';
+}else{     // 安卓系统
+	dlBtn.href = 'https://qiangyee.github.io/mask/download/SinaMask.apk?v3';
+	dlBtn.setAttribute('download', '');
+	dlBtn.setAttribute('target', '_blank');
+	if(/micromessenger/.test(ua)){
+		var img = document.getElementById('webchart-tips-img');
+		img.src = './style/images/wechat_popup.jpg'
+		setTimeout(function(){
+			document.getElementById("popweixin").style.display = "block";
+		}, 500);
+         
+    }
+}
+if(/weibo/i.test(ua)){
+    var img = document.getElementById('webchart-tips-img');
+    img.src = './style/images/weibo_popup.jpg'
+    setTimeout(function(){
+        document.getElementById("popweixin").style.display = "block";
+    }, 500);
+     
+}
+</script>
+<div style="text-align:center">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0f4ae2ca0e0d1b7d9c48366fef33d730' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>
+</body>
+</html>
+
