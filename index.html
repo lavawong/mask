@@ -349,10 +349,16 @@ if (qudao === '_10004') {
 } else if (qudao === '_10005') {
 	sudaReq('21_01_09')
 }
+
+var version = urlParser.param('v');
+if (!version) {
+    version = 1.0.6
+}
+
 if(isIos){ // ios系统
 	dlBtn.href = 'http://itunes.apple.com/cn/app/id893447044?mt=8';
 }else{     // 安卓系统
-	dlBtn.href = 'https://qiangyee.github.io/mask/download/SinaMask_v1.0.4'+qudao+'.apk?v3';
+	dlBtn.href = 'https://qiangyee.github.io/mask/download/SinaMask_v'+version+qudao+'.apk?v3';
 	dlBtn.setAttribute('download', '');
 	dlBtn.setAttribute('target', '_blank');
 	if(/micromessenger/.test(ua)){
