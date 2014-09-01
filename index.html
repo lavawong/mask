@@ -1,114 +1,25 @@
 <!DOCTYPE HTML>
-<html ng-app="mask">
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width" />
-<style type="text/css">
-html, body {
-	font-size: 16px;
-	margin: 0px;
-	padding: 0px;
-	height: 100%;
-	width: 100%;
-	font-family: "微软雅黑";
-	color: #414040;
-	-webkit-text-size-adjust: none;
-}
-form {
-	margin: 0px;
-	padding: 0px;
-}
-img {
-	border-width: 0px; -ms-interpolation-mode: bicubic;
-}
-a:link {
-	text-decoration: none;
-}
-a:visited {
-	text-decoration: none;
-}
-a:hover {
-	text-decoration: none;
-}
-ul,li,p{padding:0;margin:0;}
-li{ list-style:none;}
-.bg_mask {
-	padding: 244px 0 0 90px;
-	width: 230px;
-	height: 1016px;
-	margin: 0 auto;
-	background: url(./style/images/bg_mask.png) no-repeat 0 0;
-}
-.btn_download{
-	text-indent: -9999px;
-	width: 140px;
-	height: 44px;
-	background: url(./style/images/btn_download.jpg) no-repeat 0 0;
-	display: block;
-}
-#popweixin {
-    width:100%;
-    height:100%;
-    overflow:hidden;
-    position:fixed;
-    z-index:1000;
-    background:rgba(0,0,0,.5);
-    top:0;
-    left:0;
-    display:none;
-}
-#popweixin .tip {
-    width:100%;
-    height: 500px;
-    background:#fff;
-    z-index:1001;
-    text-align: center;
-}
-.top2bottom {
-    -webkit-animation:top2bottom 1.2s ease;
-    -moz-animation:top2bottom 1.2s ease;
-    -o-animation:top2bottom 1.2s ease;
-    animation:top2bottom 1.2s ease;
-    -webkit-animation-fill-mode:backwards;
-    -moz-animation-fill-mode:backwards;
-    -o-animation-fill-mode:backwards;
-    animation-fill-mode:backwards
-}
-.animate-delay-1 {
-    -webkit-animation-delay:1s;
-    -moz-animation-delay:1s;
-    -o-animation-delay:1s;
-    animation-delay:1s
-}
-@-webkit-keyframes top2bottom {
-    0% {
-	    -webkit-transform:translateY(-500px);
-	    opacity:.6
-	}
-	100% {
-	    -webkit-transform:translateY(0px);
-	    opacity:1
-	}
-}
-@keyframes top2bottom {
-    0% {
-	    transform:translateY(-500px);
-	    opacity:.6
-	}
-	100% {
-	    transform:translateY(0px);
-	    opacity:1
-	}
-}
-</style>
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="./style/css/pages.css">
 </head>
 <body>
 	
-		<div class="bg_mask">
-			
-			<a class="btn_download" href="#" id="dlBtn">点击下载</a>
-				
-		</div>
+		<!-- page -->
+        <div class="Hpage">  
+          <ul>
+            <li class="btn_dow"><a href="#" id="dlBtn"><img src="./style/images/btn.png"></a></li>
+            <li><img src="./style/images/H_1.jpg"></li>
+            <li><img src="./style/images/H_2.jpg"></li>
+            <li><img src="./style/images/H_3.jpg"></li>
+            <li><img src="./style/images/H_4.jpg"></li>
+            <li><img src="./style/images/H_5.jpg"></li>
+          </ul>
+        </div>
+        <!-- page -->
 		
 		<div id='popweixin'>
 		    <div class='tip top2bottom animate-delay-1'>
