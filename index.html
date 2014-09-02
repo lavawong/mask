@@ -149,7 +149,7 @@ if (!qudao && urlParser.param('qudao')) {
     qudao = '_' + urlParser.param('qudao');
 }
 if (!qudao) {
-    qudao = ('chuandan' in params) ? '_10002': ('yilabao' in params? '_10001' : '_10003');
+    qudao = ('chuandan' in params) ? '_10002': ('yilabao' in params? '_10006' : '_10003');
 }
 if (qudao === '_10004') {
 	sudaReq('21_01_08')
@@ -159,7 +159,7 @@ if (qudao === '_10004') {
 
 var version = urlParser.param('v');
 if (!version) {
-    version = '1.0.6'
+    version = '1.0.7'
 }
 
 if(isIos){ // ios系统
