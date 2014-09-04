@@ -166,8 +166,8 @@ if(isIos){ // ios系统
 	dlBtn.href = 'http://itunes.apple.com/cn/app/id893447044?mt=8';
 }else{     // 安卓系统
 	dlBtn.href = 'https://qiangyee.github.io/mask/download/SinaMask_v'+version+qudao+'.apk?v3';
-	dlBtn.setAttribute('download', '');
-	dlBtn.setAttribute('target', '_blank');
+	// dlBtn.setAttribute('download', '');
+	dlBtn.setAttribute('target', '_self');
 	if(/micromessenger/.test(ua)){
 		var img = document.getElementById('webchart-tips-img');
 		img.src = './style/images/wechat_popup.jpg'
