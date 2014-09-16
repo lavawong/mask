@@ -161,11 +161,17 @@ var version = urlParser.param('v');
 if (!version || version === '1.0.7') {
     version = '1.1.1'
 }
+var qd = urlParser.param('qd');
 
 if(isIos){ // ios系统
 	dlBtn.href = 'http://itunes.apple.com/cn/app/id893447044?mt=8';
 }else{     // 安卓系统
-	dlBtn.href = 'https://qiangyee.github.io/mask/download/SinaMask_v'+version+qudao+'.apk?v3';
+    if(qd){
+        dlBtn.href = 'https://qiangyee.github.io/mask/download/SinaMask_'+ qd +'.apk?v3';
+    }else {
+        dlBtn.href = 'https://qiangyee.github.io/mask/download/SinaMask_v'+version+qudao+'.apk?v3';
+    }
+	
 	// dlBtn.setAttribute('download', '');
 	dlBtn.setAttribute('target', '_self');
 	if(/micromessenger/.test(ua)){
