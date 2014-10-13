@@ -168,6 +168,9 @@ var num = Number(urlParser.param('qudao'));
 if(isIos){ // ios系统
 	dlBtn.href = 'http://itunes.apple.com/cn/app/id893447044?mt=8';
 }else{     // 安卓系统
+    if('yilabao' in params) {
+        qd = '10001';
+    }
     if(qd){
         dlBtn.href = 'https://qiangyee.github.io/mask/download/SinaMask_'+ qd +'.apk?v3';
     }else if (num >= 10001 && num <=10013) {
