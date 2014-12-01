@@ -183,14 +183,15 @@ if(isIos){ // ios系统
 	
 	// dlBtn.setAttribute('download', '');
 	dlBtn.setAttribute('target', '_self');
-	if(/micromessenger/.test(ua)){
-		var img = document.getElementById('webchart-tips-img');
-		img.src = './style/images/wechat_popup.jpg'
-		setTimeout(function(){
-			document.getElementById("popweixin").style.display = "block";
-		}, 500);
-         
-    }
+	
+}
+if(/micromessenger/.test(ua)){
+    var img = document.getElementById('webchart-tips-img');
+    img.src = './style/images/wechat_popup.jpg'
+    setTimeout(function(){
+        document.getElementById("popweixin").style.display = "block";
+    }, 500);
+     
 }
 if(/weibo/i.test(ua)){
     var img = document.getElementById('webchart-tips-img');
